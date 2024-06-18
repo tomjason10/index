@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Trove - Your Sari-Sari Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        h1 img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto 20px;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        caption {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        #summary {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #closing-button {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .discount-container {
+            margin-top: 10px;
+        }
+        .discount-container select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<!-- Store Logo and Name -->
+<h1><img src="treasure_trove_logo.png" alt="Store Logo" class="item-img"> Treasure Trove Store</h1>
+
+<h1>Choose your items here</h1>
+<!--Jeans-->
+<table class="item-list" border="1">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="jeans-slim.jpg" alt="Jeans 1" class="item-img"> Slim Fit Jeans</td>
+            <td>700</td>
+            <td id="stock-jeans1">35</td>
+            <td><input type="number" min="0" value="0" id="quantity-jeans1"></td>
+            <td class="button-container">
+                <button onclick="addToCart('jeans1', 700)">Add to Cart</button>
+                <button onclick="openRestockWindow('jeans1')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="jeans-ripped.jpeg" alt="Jeans 2" class="item-img"> Ripped Jeans</td>
+            <td>850</td>
+            <td id="stock-jeans2">28</td>
+            <td><input type="number" min="0" value="0" id="quantity-jeans2"></td>
+            <td class="button-container">
+                <button onclick="addToCart('jeans2', 850)">Add to Cart</button>
+                <button onclick="openRestockWindow('jeans2')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="jeans-bootcut.jpeg" alt="Jeans 3" class="item-img"> Bootcut Jeans</td>
+            <td>680</td>
+            <td id="stock-jeans3">30</td>
+            <td><input type="number" min="0" value="0" id="quantity-jeans3"></td>
+            <td class="button-container">
+                <button onclick="addToCart('jeans3', 680)">Add to Cart</button>
+                <button onclick="openRestockWindow('jeans3')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="jeans-waisted.jpg" alt="Jeans 4" class="item-img"> Waisted Jeans</td>
+            <td>480</td>
+            <td id="stock-jeans4">20</td>
+            <td><input type="number" min="0" value="0" id="quantity-jeans4"></td>
+            <td class="button-container">
+                <button onclick="addToCart('jeans4', 480)">Add to Cart</button>
+                <button onclick="openRestockWindow('jeans4')">Restock</button>
+            </td>
+        </tr>
+<!--Sando-->
+<table class="item-list" border="1">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="sando-plain.jpg" alt="Sando 1" class="item-img"> Plain Sando</td>
+            <td>350</td>
+            <td id="stock-sando1">25</td>
+            <td><input type="number" min="0" value="0" id="quantity-sando1"></td>
+            <td class="button-container">
+                <button onclick="addToCart('sando1', 350)">Add to Cart</button>
+                <button onclick="openRestockWindow('sando1')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="sando-sporty.jpg" alt="Sando 2" class="item-img"> Sporty Sando</td>
+            <td>390</td>
+            <td id="stock-sando2">16</td>
+            <td><input type="number" min="0" value="0" id="quantity-sando2"></td>
+            <td class="button-container">
+                <button onclick="addToCart('sando2', 390)">Add to Cart</button>
+                <button onclick="openRestockWindow('sando2')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="sando-stripped.jpg" alt="Sando 3" class="item-img"> Stripped Sando</td>
+            <td>300</td>
+            <td id="stock-sando3">12</td>
+            <td><input type="number" min="0" value="0" id="quantity-sando3"></td>
+            <td class="button-container">
+                <button onclick="addToCart('sando3', 300)">Add to Cart</button>
+                <button onclick="openRestockWindow('sando3')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="sando-vneck.jpg" alt="Sando 4" class="item-img"> Vneck Sando</td>
+            <td>380</td>
+            <td id="stock-sando4">20</td>
+            <td><input type="number" min="0" value="0" id="quantity-sando4"></td>
+            <td class="button-container">
+                <button onclick="addToCart('sando4', 380)">Add to Cart</button>
+                <button onclick="openRestockWindow('sando4')">Restock</button>
+            </td>
+        </tr>
+<!--Jeans-->
+<table class="item-list" border="1">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="perfume-eu.jpg" alt="Perfume 1" class="item-img"> Eu de Perfume</td>
+            <td>1600</td>
+            <td id="stock-perfume1">14</td>
+            <td><input type="number" min="0" value="0" id="quantity-perfume1"></td>
+            <td class="button-container">
+                <button onclick="addToCart('perfume1', 1600)">Add to Cart</button>
+                <button onclick="openRestockWindow('perfume1')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="perfume-flo.jpg" alt="Perfume 2" class="item-img"> Floral Perfume</td>
+            <td>1800</td>
+            <td id="stock-perfume2">16</td>
+            <td><input type="number" min="0" value="0" id="quantity-perfume2"></td>
+            <td class="button-container">
+                <button onclick="addToCart('perfume2', 1800)">Add to Cart</button>
+                <button onclick="openRestockWindow('perfume2')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="perfume-wo.jpg" alt="Perfume 3" class="item-img"> Citrus Perfume</td>
+            <td>1560</td>
+            <td id="stock-perfume3">10</td>
+            <td><input type="number" min="0" value="0" id="quantity-perfume3"></td>
+            <td class="button-container">
+                <button onclick="addToCart('perfume3', 1560)">Add to Cart</button>
+                <button onclick="openRestockWindow('perfume3')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="perfume-cit.jpg" alt="Perfume 4" class="item-img"> Citrus Perfume</td>
+            <td>2000</td>
+            <td id="stock-perfume4">18</td>
+            <td><input type="number" min="0" value="0" id="quantity-perfume4"></td>
+            <td class="button-container">
+                <button onclick="addToCart('perfume4', 2000)">Add to Cart</button>
+                <button onclick="openRestockWindow('perfume4')">Restock</button>
+            </td>
+        </tr>
+<!--Tshirt-->
+<table class="item-list" border="1">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="tshirt-plain.jpg" alt="T-shirt1" class="item-img"> Eu de Perfume</td>
+            <td>250</td>
+            <td id="stock-tshirt1">30</td>
+            <td><input type="number" min="0" value="0" id="quantity-tshirt1"></td>
+            <td class="button-container">
+                <button onclick="addToCart('tshirt1', 250)">Add to Cart</button>
+                <button onclick="openRestockWindow('tshirt1')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="tshirt-stripped.jpg" alt="T-shirt2" class="item-img"> Floral Perfume</td>
+            <td>275</td>
+            <td id="stock-tshirt2">19</td>
+            <td><input type="number" min="0" value="0" id="quantity-tshirt2"></td>
+            <td class="button-container">
+                <button onclick="addToCart('tshirt2', 275)">Add to Cart</button>
+                <button onclick="openRestockWindow('tshirt2')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="tshirt-graphic.jpg" alt="T-shirt3" class="item-img"> Citrus Perfume</td>
+            <td>280</td>
+            <td id="stock-tshirt3">20</td>
+            <td><input type="number" min="0" value="0" id="quantity-tshirt3"></td>
+            <td class="button-container">
+                <button onclick="addToCart('tshirt3', 280)">Add to Cart</button>
+                <button onclick="openRestockWindow('tshirt3')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="tshirt-vneck.jpg" alt="T-shirt4" class="item-img"> Citrus Perfume</td>
+            <td>240</td>
+            <td id="stock-tshirt4">18</td>
+            <td><input type="number" min="0" value="0" id="quantity-tshirt4"></td>
+            <td class="button-container">
+                <button onclick="addToCart('tshirt4', 240)">Add to Cart</button>
+                <button onclick="openRestockWindow('tshirt4')">Restock</button>
+            </td>
+        </tr>
+<!--Toys-->
+<table class="item-list" border="1">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="toys-blocks.jpg" alt="Toys1" class="item-img"> Eu de Perfume</td>
+            <td>850</td>
+            <td id="stock-toys1">13</td>
+            <td><input type="number" min="0" value="0" id="quantity-toys1"></td>
+            <td class="button-container">
+                <button onclick="addToCart('toys1', 850)">Add to Cart</button>
+                <button onclick="openRestockWindow('toys1')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="toys-dollhouse.jpg" alt="Toys2" class="item-img"> Eu de Perfume</td>
+            <td>999</td>
+            <td id="stock-toys2">6</td>
+            <td><input type="number" min="0" value="0" id="quantity-toys2"></td>
+            <td class="button-container">
+                <button onclick="addToCart('toys2', 999)">Add to Cart</button>
+                <button onclick="openRestockWindow('toys2')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="toys-remote.jpg" alt="Toys3" class="item-img"> Eu de Perfume</td>
+            <td>750</td>
+            <td id="stock-toys3">10</td>
+            <td><input type="number" min="0" value="0" id="quantity-toys3"></td>
+            <td class="button-container">
+                <button onclick="addToCart('toys3', 750)">Add to Cart</button>
+                <button onclick="openRestockWindow('toys3')">Restock</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="toys-stuffed.jpg" alt="Toys4" class="item-img"> Eu de Perfume</td>
+            <td>485</td>
+            <td id="stock-toys4">12</td>
+            <td><input type="number" min="0" value="0" id="quantity-toys4"></td>
+            <td class="button-container">
+                <button onclick="addToCart('toys4', 485)">Add to Cart</button>
+                <button onclick="openRestockWindow('toys4')">Restock</button>
+            </td>
+        </tr>
+        <!-- Add more items as needed -->
+
+    </tbody>
+</table>
+
+<!-- Transaction Summary -->
+<div id="summary">
+    <h2>Transaction Summary</h2>
+    <p id="total-amount">Total Amount: PHP 0.00</p>
+    <label for="payment-amount">Enter Payment Amount: </label>
+    <input type="number" id="payment-amount" min="0">
+    <button onclick="calculateChange()">Calculate Change</button>
+    <p id="change">Change: PHP 0.00</p>
+    <div class="discount-container">
+        <label for="discount">Select Discount:</label>
+        <select id="discount" onchange="applyDiscount()">
+            <option value="0">None</option>
+            <option value="0.1">Student (10%)</option>
+            <option value="0.2">Senior (20%)</option>
+            <option value="0.3">PWD (30%)</option>
+        </select>
+    </div>
+    <h3>Cart</h3>
+    <ul id="cart"></ul>
+</div>
+
+<button id="closing-button" onclick="confirmClosing()">Closing Summary</button>
+<div id="closing-summary" style="display:none;">
+    <h2>Closing Summary</h2>
+    <p id="closing-details"></p>
+</div>
+
+<script>
+    let totalAmount = 0;
+    let cart = [];
+
+    // Function to handle adding items to the cart
+    function addToCart(item, price) {
+        const quantityInput = document.getElementById(`quantity-${item}`);
+        const quantity = parseInt(quantityInput.value);
+        if (quantity > 0) {
+            const stockElement = document.getElementById(`stock-${item}`);
+            const currentStock = parseInt(stockElement.innerText);
+            if (quantity <= currentStock) {
+                const cartItem = { item, price, quantity };
+                cart.push(cartItem);
+                stockElement.innerText = currentStock - quantity;
+                quantityInput.value = 0;
+                updateCart();
+            } else {
+                alert("Not enough stock available.");
+            }
+        }
+    }
+
+    // Function to update the cart
+    function updateCart() {
+        const cartElement = document.getElementById('cart');
+        cartElement.innerHTML = '';
+        cart.forEach((cartItem, index) => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `${cartItem.quantity} x ${cartItem.item} - PHP ${cartItem.price * cartItem.quantity}`;
+            const removeButton = document.createElement('button');
+            removeButton.innerText = 'Remove';
+            removeButton.onclick = () => removeFromCart(index);
+            listItem.appendChild(removeButton);
+            cartElement.appendChild(listItem);
+        });
+        calculateTotal();
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(index) {
+        const cartItem = cart[index];
+        const stockElement = document.getElementById(`stock-${cartItem.item}`);
+        const currentStock = parseInt(stockElement.innerText);
+        stockElement.innerText = currentStock + cartItem.quantity;
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    // Function to calculate the total amount
+    function calculateTotal() {
+        totalAmount = cart.reduce((total, cartItem) => total + (cartItem.price * cartItem.quantity), 0);
+        applyDiscount();
+        document.getElementById('total-amount').innerText = `Total Amount: PHP ${totalAmount.toFixed(2)}`;
+    }
+
+    // Function to apply discount
+    function applyDiscount() {
+        const discountSelect = document.getElementById('discount');
+        const discount = parseFloat(discountSelect.value);
+        totalAmount = cart.reduce((total, cartItem) => total + (cartItem.price * cartItem.quantity), 0);
+        totalAmount -= totalAmount * discount;
+        document.getElementById('total-amount').innerText = `Total Amount: PHP ${totalAmount.toFixed(2)}`;
+    }
+
+    // Function to calculate change
+    function calculateChange() {
+        const paymentAmount = parseFloat(document.getElementById('payment-amount').value);
+        const change = paymentAmount - totalAmount;
+        document.getElementById('change').innerText = `Change: PHP ${change.toFixed(2)}`;
+    }
+
+    // Function to handle restocking items
+    function openRestockWindow(item) {
+        const stockElement = document.getElementById(`stock-${item}`).innerText;
+        const stockroomElement = document.getElementById(`stockroom-${item}`).innerText;
+        const restockWindow = window.open('', 'Restock', 'width=400,height=200');
+        restockWindow.document.write(`
+            <h1>Restock Item</h1>
+            <p>Current Store Stock: ${stockElement}</p>
+            <p>Current Stockroom Stock: ${stockroomElement}</p>
+            <label for="restock-quantity">Enter quantity to restock:</label>
+            <input type="number" id="restock-quantity" min="1" max="${stockroomElement}">
+            <button onclick="window.opener.restockItem('${item}', parseInt(document.getElementById('restock-quantity').value)); window.close();">Restock</button>
+        `);
+    }
+
+    // Function to handle the restocking process
+    function restockItem(item, quantity) {
+        const stockElement = document.getElementById(`stock-${item}`);
+        const stockroomElement = document.getElementById(`stockroom-${item}`);
+        const currentStock = parseInt(stockElement.innerText);
+        const currentStockroom = parseInt(stockroomElement.innerText);
+
+        if (quantity <= currentStockroom) {
+            stockElement.innerText = currentStock + quantity;
+            stockroomElement.innerText = currentStockroom - quantity;
+        } else {
+            alert("Not enough stock in the stockroom.");
+        }
+    }
+
+    // Function to calculate the closing summary
+    function calculateClosing() {
+        const closingDetails = cart.map(cartItem => `${cartItem.quantity} x ${cartItem.item} - PHP ${cartItem.price * cartItem.quantity}`).join('<br>');
+        document.getElementById('closing-details').innerHTML = closingDetails;
+        document.getElementById('closing-summary').style.display = 'block';
+    }
+
+    // Function to confirm and close the application
+    function confirmClosing() {
+        calculateClosing();
+        const userConfirmed = confirm("Are you sure you want to close the application and stop shopping?");
+        if (userConfirmed) {
+            window.close();
+        }
+    }
+
+    // Initial stockroom inventory
+    document.body.innerHTML += `
+        <div id="stockroom" style="display:none;">
+            <div id="stockroom-jeans1">70</div>
+            <div id="stockroom-jeans2">60</div>
+            <div id="stockroom-jeans3">65</div>
+            <div id="stockroom-jeans4">50</div>
+            <div id="stockroom-sando1">80</div>
+            <div id="stockroom-sando2">85</div>
+            <div id="stockroom-sando3">90</div>
+            <div id="stockroom-sando4">60</div>
+            <div id="stockroom-perfume1">25</div>
+            <div id="stockroom-perfume2">30</div>
+            <div id="stockroom-perfume3">28</div>
+            <div id="stockroom-perfume4">31</div>
+            <div id="stockroom-tshirt1">115</div>
+            <div id="stockroom-tshirt2">89</div>
+            <div id="stockroom-tshirt3">78</div>
+            <div id="stockroom-tshirt4">65</div>
+            <div id="stockroom-toys1">21</div>
+            <div id="stockroom-toys2">18</div>
+            <div id="stockroom-toys3">32</div>
+            <div id="stockroom-toys4">27</div>
+            <!-- Add more items as needed -->
+        </div>
+    `;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="menu-page">
+    <div class="container">
+        <h2>Main Menu</h2>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'appetizers')">Appetizers</button>
+            <button class="tablinks" onclick="openTab(event, 'maincourses')">Main Courses</button>
+            <button class="tablinks" onclick="openTab(event, 'veggy')">Veggies</button>
+            <button class="tablinks" onclick="openTab(event, 'desserts')">Desserts</button>
+            <button class="tablinks" onclick="openTab(event, 'drinks')">Drinks</button>
+        </div>
+
+        <!-- Appetizers Tab -->
+        <div id="appetizers" class="tabcontent">
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="25" onclick="updateOrderSummary()">
+                    <img src="appetizer-avocadoseafood.jpeg" height="150px" width="150px" alt="Appetizer 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Avocado Seafood $25.00</h3>
+                        <p>Description: Avocado slices topped with crabmeat sprinkled with cilantro and red chili peppers.</p>
+                        <input type="hidden" class="item-price" value="5"> 
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="25" onclick="updateOrderSummary()">
+                    <img src="appetizer-grilledshrimp.jpeg" height="150px" width="150px" alt="Appetizer 2" class="item-image">
+                    <div class="item-details">
+                        <h3>Grilled Shrimp $25.00</h3>
+                        <p>Description: Grilled shrimp and chorizo skewered with tomato sauce dip.</p>
+                        <input type="hidden" class="item-price" value="5"> 
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                     <input type="checkbox" class="item-checkbox" value="30" onclick="updateOrderSummary()">
+                     <img src="appetizer-smokedsalmon.jpeg" height="150px" width="150px" alt="Appetizer 3" class="item-image">
+                     <div class="item-details">
+                         <h3>Smoked Salmon and Cucumber $30.00</h3>
+                         <p>Description: Crunchy cucumber slices topped with lemon dill cream cheese and smoked salmon./p>
+                         <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                     <input type="checkbox" class="item-checkbox" value="28" onclick="updateOrderSummary()">
+                     <img src="appetizer-thaichicken.jpeg" height="150px" width="150px" alt="Appetizer 4" class="item-image">
+                     <div class="item-details">
+                         <h3>Thai Chicken Salad $28.00</h3>
+                         <p>Description: Creamy peanut sauce with cooked chicken and seasoned atop refrigerated pie crust.</p>
+                         <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                     <input type="checkbox" class="item-checkbox" value="20" onclick="updateOrderSummary()">
+                     <img src="appetizer-Cranberry.jpeg" height="150px" width="150px" alt="Appetizer 5" class="item-image">
+                     <div class="item-details">
+                         <h3>Cranberry Olive Cheese Skewers $20.00</h3>
+                         <p>Description: Dried cranberries and green olives mixed in with extra virgil oil skewered with cheddar cheese.</p>
+                         <input type="hidden" class="item-price" value="5"> 
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Courses Tab -->
+        <div id="maincourses" class="tabcontent">
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="300" onclick="updateOrderSummary()">
+                    <img src="main-braised_beef.jpeg" height="150px" width="150px" alt="Maincourse 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Braised Beef $300.00</h3>
+                        <p>Description: Slow cooked braised beef with red wine, beef stock, carrot, celery and onion seasoned with parsley.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="250" onclick="updateOrderSummary()">
+                    <img src="main-lime_salmon.jpeg" height="150px" width="150px" alt="Maincourse 2" class="item-image">
+                    <div class="item-details">
+                        <h3>Honey Cilantro Lime Salmon $250.00</h3>
+                        <p>Description: Oven baked salmon covered with honey, lime juice and cilantro.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="270" onclick="updateOrderSummary()">
+                    <img src="main-roasted_garlic.jpeg" height="150px" width="150px" alt="Maincourse 3" class="item-image">
+                    <div class="item-details">
+                        <h3>Roasted Chicken Thigh with Garlic $270.00</h3>
+                        <p>Description: Tender juicy chicken thighs cooked with roasted garlic pan sauce with lemon.</p>
+                        <input type="hidden" class="item-price" value="5"> 
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="370" onclick="updateOrderSummary()">
+                    <img src="main-seafood_boil.jpeg" height="150px" width="150px" alt="Maincourse 4" class="item-image">
+                    <div class="item-details">
+                        <h3>Seafood Boil $370.00</h3>
+                        <p>Description: Finger-licking jumbo shrimp, crab, andouille sausage, potatoes, eggs, and corn cobs mixed in flavor filled broth of cajun spices.</p>
+                        <input type="hidden" class="item-price" value="5"> 
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+        </div>
+         <!-- Veggy Tab -->
+        <div id="veggy" class="tabcontent">
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="180" onclick="updateOrderSummary()">
+                    <img src="veggy-bakedveggy.jpeg" height="150px" width="150px" alt="Veggy 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Baked Vegetables $180.00</h3>
+                        <p>Description: A very simple cooked vegetable dish — seasoned with dry soup powder and baked until tender and caramelized.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="150" onclick="updateOrderSummary()">
+                    <img src="veggy-stir_fry.jpeg" height="150px" width="150px" alt="Veggy 2" class="item-image">
+                    <div class="item-details">
+                        <h3>Stir Fry Vegetables $150.00</h3>
+                        <p>Description: A blend of colorful veggies cooked in a sweet and savory honey garlic sauce.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="160" onclick="updateOrderSummary()">
+                    <img src="veggy-mushroom_casserole.jpeg" height="150px" width="150px" alt="Veggy 3" class="item-image">
+                    <div class="item-details">
+                        <h3>Mushroom Casserole $160.00</h3>
+                        <p>Description: Cheesy mushroom casserole is wonderfully flavored with onions, thyme, and melted gruyere.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+        </div>
+
+        <!-- Desserts Tab -->
+        <div id="desserts" class="tabcontent">
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="100" onclick="updateOrderSummary()">
+                    <img src="dessert-hot_fudge.jpeg" height="150px" width="150px" alt="Desserts 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Hot Fudge $100.00</h3>
+                        <p>Description: Hot chocolate mix, sweetened condensed milk, semisweet chocolate chips, and white chocolate chips.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="100" onclick="updateOrderSummary()">
+                    <img src="dessert-mint_brownies.jpeg" height="150px" width="150px" alt="Desserts 2" class="item-image">
+                    <div class="item-details">
+                        <h3>Mint Brownies $100.00</h3>
+                        <p>Description: Thick and fudgy brownies layered with sweet mint frosting.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="100" onclick="updateOrderSummary()">
+                    <img src="dessert-tiramisu.jpeg" height="150px" width="150px" alt="Desserts 3" class="item-image">
+                    <div class="item-details">
+                        <h3>Tiramisu $100.00</h3>
+                        <p>Description: Coffee-soaked ladyfingers and a cream made from mascarpone, eggs and sugar.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+        </div>
+         <!-- Drinks Tab -->
+        <div id="drinks" class="tabcontent">
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="120" onclick="updateOrderSummary()">
+                    <img src="drinks-banana_shake.jpeg" height="150px" width="150px" alt="Drinks 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Banana Shake $120.00</h3>
+                        <p>Description:  a sweetened drink made by blending ripe bananas, milk, ice cream, flavorings and a sweetener.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="120" onclick="updateOrderSummary()">
+                    <img src="drinks-berry_breakfast.jpeg" height="150px" width="150px" alt="Drinks 2" class="item-image">
+                    <div class="item-details">
+                        <h3>Mixed Berries Breakfast Shake $120.00</h3>
+                        <p>Description:  Almond milk, frozen mixed berries, plain yogurt, and sugar.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="120" onclick="updateOrderSummary()">
+                    <img src="drinks-strawberry_short.jpeg" height="150px" width="150px" alt="Drinks 3" class="item-image">
+                    <div class="item-details">
+                        <h3>Strawberry Shortcake $120.00</h3>
+                        <p>Description: Vanilla ice cream, bought pound cake, strawberries, vanilla, and whipped cream on top.</p>
+                        <input type="hidden" class="item-price" value="5">
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-list">
+            </ul>
+            <div id="total">Total: $0.00</div>
+        </div>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="location.href='Homepage.html'">Back to Home</button>
+
+        <!-- Order Now Button -->
+        <button class="order-now-button" onclick="placeOrder()">Order Now</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

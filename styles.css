@@ -1,0 +1,112 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Homepage styles */
+.homepage {
+    background-color: white; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 30px; /* Adjust as needed */
+}
+
+.order-button {
+    padding: 20px 30px;
+    font-size: 18px;
+    background-color:red;
+    border: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+
+}
+
+.order-button:hover {
+    background-color: red;
+}
+
+/* Main menu page styles */
+.menu-page {
+    background-color:pink;
+}
+
+.tabcontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 45%; /* Adjust width as needed */
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background for items */
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.item-details {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.item-description {
+    margin-bottom: 10px;
+}
+
+.item-quantity {
+    float: left; /* Move the quantity input to the right */
+}
+
+.order-summary {
+    margin-top: 20px;
+}
+
+.order-summary h2 {
+    margin-bottom: 10px;
+}
+
+.order-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-summary li {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #FF4500;
+}

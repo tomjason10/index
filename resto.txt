@@ -1,0 +1,20 @@
+appetizer
+1. Avocado Seafood - slice avocado topped with crabmeat sprinkled with cilantro and red chili peppers.
+2. Grilled Shrimp and Chorizo
+3. Smoked Salmon
+4. Thai Chicken Salad
+5. Cranberry Olive Cheese Skewers
+
+<ul>
+                <li>
+                    <input type="checkbox" class="item-checkbox" value="15" onclick="updateOrderSummary()">
+                    <img src="appetizer-avocadoseafood.jpeg" height="auto" width="50%" alt="Appetizer 1" class="item-image">
+                    <div class="item-details">
+                        <h3>Avocado Seafood $15.00</h3>
+                        <p>Description: slice avocado topped with crabmeat sprinkled with cilantro and red chili peppers.</p>
+                        <input type="hidden" class="item-price" value="5"> <!-- Hidden input for item price -->
+                    </div>
+                    <input type="number" class="quantity" value="1">
+                </li>
+                <!-- Add more items with descriptions and appropriate values -->
+            </ul>
